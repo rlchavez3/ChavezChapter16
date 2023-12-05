@@ -1,0 +1,19 @@
+---
+title: "Flagstaff_Weather"
+author: "Rebecca Chavez"
+date: "2023-11-30"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+library(ChavezChapter16)
+```
+
+```{r}
+Flagstaff_Weather_1950 <- Flagstaff_Weather %>%
+  filter(1950 == year(DATE))
+
+ggplot(Flagstaff_Weather_1950, aes(x = DATE, y = TempMax)) +
+  geom_point()
+```
